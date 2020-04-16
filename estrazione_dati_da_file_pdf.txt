@@ -1,0 +1,11 @@
+# estrazione immagini da file pdf
+pdfimages tabelle.pdf aa
+# estrazione testi da immagini
+for img in aa*
+do
+   # conversione da colore a scala di grigi
+   convert -grayscale $img g$i
+   # estrazione testo
+   tesseract g$i $img
+done
+# i file creati con estensione txt deveno essere modificati a mano per sistemare# le righe di intestazione, le righe di dati invece sono corrette
